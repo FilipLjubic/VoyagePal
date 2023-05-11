@@ -53,15 +53,18 @@ pnpx shadcn-ui add [component]
 ```
 
 Example:
+
 ```bash
 pnpx shadcn-ui add alert-dialog
 ```
 
 List of all components:
+
 ```bash
 pnpx shadcn-ui add
 ```
-[You can also see them here](https://ui.shadcn.com/components) 
+
+[You can also see them here](https://ui.shadcn.com/components)
 
 ## What's next? How do I make an app with this?
 
@@ -87,4 +90,5 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
 # VoyagePal

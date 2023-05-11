@@ -11,6 +11,14 @@ import { Alert, AlertDescription, AlertTitle } from "~/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "~/ui/avatar";
 import { Button } from "~/ui/button";
 import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/ui/card";
+import {
   Dialog,
   DialogClose,
   DialogContent,
@@ -30,10 +38,21 @@ import {
   SelectValue,
 } from "~/ui/select";
 import { Textarea } from "~/ui/text-area";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/ui/card";
 
+export default function PostPage() {
+  const { data: posts } = api.post.getAll.useQuery();
 
-// /posts
+  return (
+    <main className="container mx-auto py-16">
+      <CreatePostForm />
+      <div className="mx-auto mt-4 flex max-w-xl flex-col gap-4">
+        {posts?.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
+    </main>
+  );
+}
 
 // This schema is reused on the backend
 export const postCreateSchema = z.object({
@@ -48,8 +67,6 @@ function CreatePostForm() {
   const methods = useZodForm({
     schema: postCreateSchema,
   });
-
-
 
   const utils = api.useContext();
   const createPost = api.post.create.useMutation({
@@ -128,18 +145,18 @@ function CreatePostForm() {
               </Select>
             )}
           />
-<Card>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <p>Card Content</p>
-  </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
-</Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Card Title</CardTitle>
+              <CardDescription>Card Description</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+              <p>Card Footer</p>
+            </CardFooter>
+          </Card>
 
           <p className="font-medium text-red-500">
             {methods.formState.errors?.category?.message}
@@ -213,19 +230,3 @@ function PostCard(props: { post: RouterOutputs["post"]["getAll"][number] }) {
     </div>
   );
 }
-
-export default function PostPage() {
-  const { data: posts } = api.post.getAll.useQuery();
-
-  return (
-    <main className="container mx-auto py-16">
-      <CreatePostForm />
-      <div className="mx-auto mt-4 flex max-w-xl flex-col gap-4">
-        {posts?.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
-    </main>
-  );
-};
-
