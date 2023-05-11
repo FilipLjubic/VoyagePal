@@ -33,7 +33,20 @@ import { Textarea } from "~/ui/text-area";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/ui/card";
 
 
-// /posts
+export default function PostPage() {
+  const { data: posts } = api.post.getAll.useQuery();
+
+  return (
+    <main className="container mx-auto py-16">
+      <CreatePostForm />
+      <div className="mx-auto mt-4 flex max-w-xl flex-col gap-4">
+        {posts?.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
+    </main>
+  );
+}
 
 // This schema is reused on the backend
 export const postCreateSchema = z.object({
@@ -214,18 +227,5 @@ function PostCard(props: { post: RouterOutputs["post"]["getAll"][number] }) {
   );
 }
 
-export default function PostPage() {
-  const { data: posts } = api.post.getAll.useQuery();
 
-  return (
-    <main className="container mx-auto py-16">
-      <CreatePostForm />
-      <div className="mx-auto mt-4 flex max-w-xl flex-col gap-4">
-        {posts?.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
-    </main>
-  );
-};
 
