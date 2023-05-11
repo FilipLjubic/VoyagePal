@@ -1,18 +1,15 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Book } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { api } from "~/utils/api";
-import { useRouter } from "next/router";
 
 const Home: NextPage = (props) => {
   const { data: session } = useSession();
-  const hello = api.hello.useQuery({text: "World"});
-     
-    
-
+  const hello = api.hello.useQuery({ text: "World" });
 
   const router = useRouter();
 
@@ -20,7 +17,6 @@ const Home: NextPage = (props) => {
   const id2 = router.query.id2;
 
   console.log(id, id2);
-   
 
   return (
     <>
