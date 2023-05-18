@@ -1,31 +1,30 @@
+import Link from "next/link";
 import { Book } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
-import Link from "next/link";
 
 import { api } from "~/utils/api";
 
-
 const AuthShowcase: React.FC = () => {
-    const { data: sessionData } = useSession();
-  
-    return (
-      <div className="flex flex-col items-center justify-center gap-4">
-        <button
-          className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-          onClick={sessionData ? () => signOut() : () => signIn()}
-        >
-          {sessionData ? "Sign out" : "Sign in"}
-        </button>
-      </div>
-    );
-  };
-  
-  
+  const { data: sessionData } = useSession();
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-4">
+      <button
+        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+        onClick={sessionData ? () => signOut() : () => signIn()}
+      >
+        {sessionData ? "Sign out" : "Sign in"}
+      </button>
+    </div>
+  );
+};
+
 const DemoShowcase = () => {
-    const { data: session } = useSession();
-    const hello = api.hello.useQuery({ text: session?.user.name });
-  
-    return <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[rgb(46,2,109)] to-slate-900">
+  const { data: session } = useSession();
+  const hello = api.hello.useQuery({ text: session?.user.name });
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[rgb(46,2,109)] to-slate-900">
       <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
           Create <span className="text-purple-400">T3</span> App
@@ -63,7 +62,8 @@ const DemoShowcase = () => {
           <AuthShowcase />
         </div>
       </div>
-    </main>;
-  }
+    </main>
+  );
+};
 
-  export default DemoShowcase;
+export default DemoShowcase;

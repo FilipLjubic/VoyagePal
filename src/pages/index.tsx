@@ -1,11 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Map from "~/ui/Map";
-import { PlacesProvider } from "~/utils/usePlaces";
 
+import { PlacesProvider } from "~/utils/usePlaces";
+import Map from "~/ui/Map";
 
 const Home: NextPage = (props) => {
-
   return (
     <>
       <Head>
