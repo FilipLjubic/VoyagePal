@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    .centered {
+        @apply left-1/2 transform -translate-x-1/2;
+    }
+}
