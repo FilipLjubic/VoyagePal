@@ -1,5 +1,6 @@
 import { CircleF, GoogleMap, MarkerF } from "@react-google-maps/api";
-import { FC, useMemo } from "react";
+import type { FC} from "react";
+import { useMemo } from "react";
 import { usePlaces } from "~/utils/usePlaces";
 import Search from "./Search";
 
@@ -20,7 +21,7 @@ const Map: FC = () => {
 
     return (
         <div className="w-full h-screen flex">
-            <div className="w-64 h-screen bg-slate-50">
+                    <div className="w-64 h-screen bg-slate-50">
                 <h1 className="text-gray-700 dark:text-blue-100 text-xl font-bold p-4">
                     {place?.name ?? 'No place'}
                 </h1>

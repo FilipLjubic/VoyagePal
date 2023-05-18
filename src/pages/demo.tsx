@@ -21,7 +21,7 @@ const AuthShowcase: React.FC = () => {
   };
   
   
-  const  DemoShowcase = () => {
+const DemoShowcase = () => {
     const { data: session } = useSession();
     const hello = api.hello.useQuery({ text: session?.user.name });
   
@@ -65,3 +65,5 @@ const AuthShowcase: React.FC = () => {
       </div>
     </main>;
   }
+
+  export default DemoShowcase;

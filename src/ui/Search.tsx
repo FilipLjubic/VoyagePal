@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { usePlaces } from '~/utils/usePlaces';
 import { Input } from './input';
@@ -20,7 +20,7 @@ const Search: FC = () => {
     }
 
     return <>
-            <div className='flex flex-col w-64 h-fit'>
+        <div className='flex flex-col w-64 h-fit'>
             <Input
                 placeholder="Search for a place"
                 className='bg-white'
