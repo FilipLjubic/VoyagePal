@@ -1,0 +1,79 @@
+{
+  "name": "Málaga",
+  "location": "Andalusia, Spain",
+  "stayDuration": [
+    {
+      "optimal": 5,
+      "min": 3,
+      "max": 7
+    },
+    {
+      "optimal": 2,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "optimal": 7,
+      "min": 5,
+      "max": 10
+    }
+  ],
+  "budgets": [
+    {
+      "optimal": 50,
+      "min": 30,
+      "max": 100
+    },
+    {
+      "optimal": 20,
+      "min": 10,
+      "max": 50
+    },
+    {
+      "optimal": 80,
+      "min": 50,
+      "max": 120
+    },
+    {
+      "optimal": 150,
+      "min": 100,
+      "max": 300
+    }
+  ],
+  "safety": 8,
+  "nature": 7,
+  "activities": 9,
+  "generalInfo": {
+    "history": "With over 2,800 years of history, Málaga is one of the oldest cities in the world. It has been ruled by many different cultures, including the Romans, Moors, and Christians, which is reflected in its architecture and cultural heritage.",
+    "culture": "Málaga is a city rich in culture, with many museums, art galleries, and annual festivals. Some notable cultural sites include the Picasso Museum and the Alcazaba of Málaga, a Moorish fortress.",
+    "notableEvents": [
+      "Feria de Málaga (August)",
+      "Holy Week (April)",
+      "Carnival (February)"
+    ],
+    "funFacts": [
+      "Pablo Picasso was born in Málaga",
+      "Málaga has over 300 sunny days a year"
+    ]
+  },
+  "dayTrips": [
+    {
+      "name": "Nerja",
+      "description": "A beautiful coastal town with stunning beaches and a charming old town.",
+      "location": "50 km east of Málaga",
+      "estimatedTravelTime": "1 hour"
+    },
+    {
+      "name": "Ronda",
+      "description": "A gorgeous mountain town known for its dramatic landscape and historic bullring.",
+      "location": "100 km northwest of Málaga",
+      "estimatedTravelTime": "1.5 hours"
+    },
+    {
+      "name": "Granada",
+      "description": "Home to the famous Alhambra palace and the Sierra Nevada mountains.",
+      "location": "130 km northeast of Málaga",
+      "estimatedTravelTime": "1.5 hours"
+    }
+  ]
+}

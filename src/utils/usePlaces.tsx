@@ -13,9 +13,13 @@ function usePlacesServiceWithState() {
   const [place, setPlace] = useState<Place>();
   const [map, setMap] = useState<google.maps.Map>();
 
+  const libraries = useMemo(() => {
+    return ["places"];
+  }, []);
+
   const { isLoaded: isMapLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string,
-    libraries: ["places"],
+    libraries: libraries as any[],
     preventGoogleFontsLoading: true,
   });
 

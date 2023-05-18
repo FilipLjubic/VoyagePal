@@ -21,6 +21,8 @@ module.exports = {
   rules: {
     "@typescript-eslint/consistent-type-imports": "warn",
     "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/require-await": "off",
     "@typescript-eslint/no-misused-promises": [
       2,
       {

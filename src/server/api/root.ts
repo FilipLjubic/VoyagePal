@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { postRouter } from "./routers/post";
+import { summaryRouter } from "./routers/summary";
 import { createTRPCRouter, publicProcedure } from "./trpc";
 
 /**
@@ -17,6 +18,7 @@ export const appRouter = createTRPCRouter({
       };
     }),
   post: postRouter,
+  summary: summaryRouter,
 });
 
 // export type definition of API

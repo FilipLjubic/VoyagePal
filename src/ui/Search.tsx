@@ -3,7 +3,7 @@ import type { FC } from "react";
 import { usePlaces } from "~/utils/usePlaces";
 import { Input } from "./input";
 
-const Search: FC = () => {
+export const Search: FC = () => {
   const {
     getPlacePredictions,
     placePredictions,
@@ -23,6 +23,7 @@ const Search: FC = () => {
           lng: location.lng(),
           name: item.description,
         });
+
         map?.panTo(location);
 
         map?.setZoom(8);
@@ -56,5 +57,3 @@ const Search: FC = () => {
     </>
   );
 };
-
-export default Search;
